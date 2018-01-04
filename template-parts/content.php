@@ -1,0 +1,1 @@
+<h1>Hola desde content.php </h1>

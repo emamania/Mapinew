@@ -12,6 +12,7 @@ function ema_guardar() {
 		$check_out 	= sanitize_text_field( $_POST['fecha_out_booking'] );
 		$adulto 		= sanitize_text_field( $_POST['adulto_booking'] );
 		$child 			= sanitize_text_field( $_POST['nino_booking'] );
+		$total 			= sanitize_text_field( $_POST['total_booking'] );
 		$mensaje 		= sanitize_text_field( $_POST['mensaje_booking'] );
 
 		$tabla = $wpdb->prefix . "reservaciones";
@@ -24,6 +25,7 @@ function ema_guardar() {
 			'fecha_out'	=> $check_out,
 			'adulto'		=> $adulto,
 			'nino'			=> $child,
+			'total'			=> $total,
 			'mensaje'		=> $mensaje
 		);
 
@@ -36,6 +38,7 @@ function ema_guardar() {
 			'%s',
 			'%d', // entero
 			'%d',
+			'%f', // total float
 			'%s'
 		);
 

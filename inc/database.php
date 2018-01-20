@@ -5,7 +5,7 @@ function emaTour_database(){
 	global $wpdb;
 	// Agregamos un version
 	global $ematour_dbversion;
-	$ematour_dbversion = '0.1';
+	$ematour_dbversion = '0.2';
 
 	// Obtenemos el prefijo
 	$table = $wpdb->prefix . 'reservaciones';
@@ -67,7 +67,7 @@ add_action( 'after_setup_theme', 'emaTour_database' );
 // Funcion para comprobar que la version instala es igual a la base de datos nueva.
 function emaTourdb_revisar() {
 	global $ematour_dbversion;
-	if(get_site_option( '$ematour_dbversion') != $ematour_dbversion ) {
+	if(get_site_option( 'ematour_dbversion') != $ematour_dbversion ) {
 		emaTour_database();
 	}
 }

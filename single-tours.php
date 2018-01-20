@@ -1,15 +1,15 @@
-<?php 
+<?php
 /**
  * The template for displaying all single posts.
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- * 
+ *
  * @package ema_theme
  */
 
 get_header(); ?>
 	<?php
 		$imagen_id = get_post_thumbnail_id($post->ID );
-		$imagen = wp_get_attachment_image_src( $imagen_id, 'single_tour_img_header');		
+		$imagen = wp_get_attachment_image_src( $imagen_id, 'single_tour_img_header');
 	?>
 	<?php while(have_posts()): the_post(); ?>
 	<section class="main_wrapper">
@@ -24,13 +24,13 @@ get_header(); ?>
 							<?php $subtituloTour =  get_post_meta( get_the_ID(), 'ema_campos_tours_subtitulo', true ); ?>
 							<?php if($subtituloTour) { ?>
 							<span><?php echo $subtituloTour;  ?></span>
-							<?php } ?>	
+							<?php } ?>
 							<span class="include_icon">
 								<!-- <?php $calificacion =  get_post_meta( get_the_ID(), 'ema_campos_tours_calificacion', true ); ?>
 								<?php if($calificacion) { ?>
-									<?php echo $calificacion;  $estrellas = '<i class="fa fa-star"></i>'; 
+									<?php echo $calificacion;  $estrellas = '<i class="fa fa-star"></i>';
 										switch($calificacion) {
-											case "low":	
+											case "low":
 												echo $estrellas;
 												break;
 											case "Sufficient":
@@ -58,14 +58,16 @@ get_header(); ?>
 								<span>from / per person</span>
 								<span>
 									<?php $precioTour =  get_post_meta( get_the_ID(), 'ema_campos_tours_price', true ); ?>
-									<?php if($precioTour) { ?>
+									<?php $precioTour_n =  get_post_meta( get_the_ID(), 'ema_campos_tours_price_child', true ); ?>
+									<?php if(($precioTour) || $precioTour_n ) { ?>
 										<sup>$</sup>
 										<var class="precio_Tour"> <?php echo $precioTour; ?></var>
+										<var class="precio_Tour_n"> <?php echo $precioTour_n; ?></var>
 									<?php } ?>
 								</span>
 							</div>
 						</div>
-					</div>					
+					</div>
 				</div>
 			</div>
 		</div>
@@ -77,15 +79,15 @@ get_header(); ?>
 				<li><a href="#">Home</a></li>
 				<li><a href="/tours">Tours</a></li>
 				<li><a href="#"><?php echo get_the_title( );	 ?></a></li>
-			</ul>	
+			</ul>
 		</div>
 	</div>
 	<?php endwhile; ?>
-	<!-- SINGLE INTRO TOUR BLOCK -->		        	
+	<!-- SINGLE INTRO TOUR BLOCK -->
 	<section id="Content_tour" class="margin_60">
 		<div class="container">
 			<div class="row">
-				<?php get_template_part('template-parts/slider_single'); ?>				
+				<?php get_template_part('template-parts/slider_single'); ?>
 			</div>
 		</div>
 	</section>

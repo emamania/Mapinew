@@ -19,14 +19,14 @@ get_header(); ?>
 			<div class="parallax_content">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-8 col-sm-8">
+						<div class="col-md-8 col-sm-6">
 							<h1><?php echo get_the_title(); ?></h1>
 							<?php $subtituloTour =  get_post_meta( get_the_ID(), 'ema_campos_tours_subtitulo', true ); ?>
 							<?php if($subtituloTour) { ?>
 							<span><?php echo $subtituloTour;  ?></span>
 							<?php } ?>	
 							<span class="include_icon">
-								<?php $calificacion =  get_post_meta( get_the_ID(), 'ema_campos_tours_calificacion', true ); ?>
+								<!-- <?php $calificacion =  get_post_meta( get_the_ID(), 'ema_campos_tours_calificacion', true ); ?>
 								<?php if($calificacion) { ?>
 									<?php echo $calificacion;  $estrellas = '<i class="fa fa-star"></i>'; 
 										switch($calificacion) {
@@ -47,19 +47,20 @@ get_header(); ?>
 												break;
 										}
 									?>
-								<?php } ?>
+								<?php } ?> -->
 								<i class="fa fa-car"></i>
 								<i class="fa fa-train"></i>
 								<i class="fa fa-hotel"></i>
 							</span>
 						</div>
-						<div class="col-md-4 col-sm-4">
+						<div class="col-md-4 col-sm-6">
 							<div class="price_single_main">
 								<span>from / per person</span>
 								<span>
 									<?php $precioTour =  get_post_meta( get_the_ID(), 'ema_campos_tours_price', true ); ?>
 									<?php if($precioTour) { ?>
-										<sup>$</sup><?php echo $precioTour; ?>
+										<sup>$</sup>
+										<var class="precio_Tour"> <?php echo $precioTour; ?></var>
 									<?php } ?>
 								</span>
 							</div>

@@ -3,7 +3,10 @@
 require get_template_directory() . '/inc/cleanup.php';
 require get_template_directory() . '/inc/function-admin.php';
 require get_template_directory() . '/inc/enqueue.php';
+// Tablas personalizadas y otras funciones
 require get_template_directory() . '/inc/database.php';
+// Funciiones para la reservaciones
+require get_template_directory() . '/inc/reservaciones.php';
 //require get_template_directory() . '/inc/core/walkernav.php';
 
 /**********************************************************/
@@ -101,19 +104,19 @@ add_action( 'init', 'register_menus' );
 //crear una funcion para lanzar despues del tema
 function ema_setup() {
 	add_theme_support( 'post-thumbnails' );
-	
+
 	// filtro de pagina de Atractivos
 	add_image_size( 'tour_buscado', 800, 533, true );
 	// Imagens de la portada de Blogs
 	add_image_size( 'main_slides', 960, 500, true );
 	add_image_size( 'header_img_blog', 960, 533, true );
-	
-	//Imagnes de Single tours 
+
+	//Imagnes de Single tours
 	add_image_size( 'single_tour_img_header', 960, 450, true );
 	add_image_size( 'tour_img_portada', 320, 270, true );
 	add_image_size( 'tour_img_slide', 750, 380, true );
 	add_image_size( 'tab_img_description', 445, 255, true );
-	
+
 	// BLOG IMG
 	add_image_size( 'blog_img_header', 445, 255, true );
 	add_image_size( 'blog_img_list', 950, 375, true );

@@ -80,8 +80,8 @@
 			<tr>
 				<td>Total amount</td>
 				<td class="text-right tt_todo">
-					<span id="tt_totaladult"></span>				
-					<span id="tt_totalnino"></span>				
+					<span id="tt_totaladult"></span>
+					<span id="tt_totalnino"></span>
 						<!-- 3x $52 -->
 				</td>
 			</tr>
@@ -96,7 +96,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<label for="mensaje_booking">Dejenos un Mensaje</label>
-			<textarea name="mensaje_booking" id="mensaje_booking" placeholder="Write your message" class="form-control" cols="30" rows="10" style="overflow:hidden;height:70px;margin-bottom:20px;" ></textarea>
+			<textarea name="mensaje_booking" id="mensaje_booking" placeholder="Escribe aqui tu mensaje" class="form-control" cols="30" rows="10" style="overflow:hidden;height:70px;margin-bottom:20px;" ></textarea>
 		</div>
 	</div>
 	<input type="submit" name="reserva_booking" class="btn_booking button">

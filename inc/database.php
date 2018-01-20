@@ -5,7 +5,7 @@ function emaTour_database(){
 	global $wpdb;
 	// Agregamos un version
 	global $ematour_dbversion;
-	$ematour_dbversion = '0.2';
+	$ematour_dbversion = '0.1';
 
 	// Obtenemos el prefijo
 	$table = $wpdb->prefix . 'reservaciones';
@@ -17,9 +17,13 @@ function emaTour_database(){
 	$sql = "CREATE TABLE $table (
 		id mediumint(9) NOT NULL AUTO_INCREMENT,
 		nombre varchar(50) NOT NULL,
-		fecha datetime NOT NULL,
 		correo varchar(50) DEFAULT '' NOT NULL,
 		telefono varchar(15) NOT NULL,
+		whatsaap varchar(15) NOT NULL,
+		fecha_in datetime NOT NULL,
+		fecha_out datetime NOT NULL,
+		adulto tinyint NOT NULL,
+		nino tinyint NOT NULL,
 		mensaje longtext NOT NULL,
 		PRIMARY KEY (id)
 	) $charset_collate; ";
@@ -41,7 +45,6 @@ function emaTour_database(){
 		//  Aqui realizarias las actualizaciones
 		$sql = "CREATE TABLE $table (
 			id mediumint(9) NOT NULL AUTO_INCREMENT,
-			nombre_tour varchar(50) NOT NULL,
 			nombre varchar(50) NOT NULL,
 			correo varchar(50) DEFAULT '' NOT NULL,
 			telefono varchar(15) NOT NULL,

@@ -88,7 +88,7 @@
 			<tr class="total">
 					<td>Total cost</td>
 					<td class="text-right">
-						<p class="pr_total"></p>
+						<p class="pr_total total_booking"></p>
 					</td>
 			</tr>
 		</tbody>

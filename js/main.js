@@ -2,14 +2,14 @@
     Sticky nav
 =============================================== */
 (function($){
-	
+
 	$(window).scroll( function() {
 			if ( $(this).scrollTop() > 10 ) {
 					$('header').addClass("sticky");
 			} else {
 					$('header').removeClass("sticky");
 			}
-	});	
+	});
 	/* ==============================================
 			Menu
 	=============================================== */
@@ -30,47 +30,47 @@
 			$('a.open_close').on( "click", function() {
 					$('.cmn-toggle-switch').removeClass('active')
 			});
-	}	
+	}
 	/* ==============================================
 			Hamburger icon
 	=============================================== */
 	var toggles = document.querySelectorAll(".cmn-toggle-switch");
-	
+
 		for (var i = toggles.length - 1; i >= 0; i--) {
 			var toggle = toggles[i];
 			toggleHandler(toggle);
 		};
-	
+
 		function toggleHandler(toggle) {
 			toggle.addEventListener( "click", function(e) {
 				e.preventDefault();
 				(this.classList.contains("active") === true) ? this.classList.remove("active") : this.classList.add("active");
 			});
 		};
-		
+
 		/* ==============================================
 				Responsive Carousel
 	=============================================== */
-	
+
 	$('.carousel[data-type="multi"] .item').each(function(){
 		var next = $(this).next();
 		if (!next.length) {
 			next = $(this).siblings(':first');
 		}
 		next.children(':first-child').clone().appendTo($(this));
-		
+
 		for (var i=0;i<2;i++) {
 			next=next.next();
 			if (!next.length) {
 				next = $(this).siblings(':first');
 			}
-			
+
 			next.children(':first-child').clone().appendTo($(this));
 		}
 	});
 
 	/* ==============================================
-				Filtro de tours y oculta 
+				Filtro de tours y oculta
 	=============================================== */
 	$('#tx_tours > div').not(':first').hide();
 	// agregar .active first li
@@ -92,7 +92,7 @@
 	});
 
 	/* ==============================================
-				Formulario 
+				Formulario
 	=============================================== */
 	/* Input incrementer*/
 	$(".numbers-row").append('<div class="inc button_inc">+</div><div class="dec button_inc">-</div>');
@@ -118,87 +118,80 @@
 	/* ==============================================
 			Formulario Suma de precios por persona + agregar
 	================================================== */
-	var totaladult = document.getElementById("tt_totaladult");
-	var totalnino = document.getElementById("tt_totalnino");
-	
+
 	$(".button_inc").on("click", function () {
 		var $button = $(this);
 
-		
+		// Datos de Nino y adulto
 		var price_adul = document.getElementById("tt_adul");
 		var price_nin = document.getElementById("tt_nino");
-		
+
+		// Datos de this y total
+		var precio_real_adul 	= document.getElementsByClassName("precio_Tour");
+		var precio_real_nin  	= document.getElementsByClassName("precio_Tour_n");
+		var precio_total			= document.getElementsByClassName("pr_total");
+
+		var totaladult 				= document.getElementById("tt_totaladult");
+		var totalnino 				= document.getElementById("tt_totalnino");
 
 		// Mostrar en el DOM
-		var oldval_adl = $button.parent().find("#adulto_booking").val();
-		var oldval_nin = $button.parent().find("#nino_booking").val();
+		var oldval_adl 				= $button.parent().find("#adulto_booking").val();
+		var oldval_nin 				= $button.parent().find("#nino_booking").val();
 
-		// Precio de Tour Adulto y Niño
-		var precio_real_adul= document.getElementsByClassName("precio_Tour");
-		var precio_real_nin = document.getElementsByClassName("precio_Tour_n");
-
-		var auxprecio_real_adul = precio_real_adul.innerHTML;
-		var auxprecio_real_nin = precio_real_nin.innerHTML;
-
-		var totalfinal= document.getElementsByClassName("pr_total");
+		// Suma total
+		var sumatotal = oldval_adl + oldval_nin;
+		console.log(sumatotal);
 
 		if (oldval_adl ) {
 			if (oldval_adl < 1) {
 				var oldval_adl = 0;
 			}
 			else {
-				var auxadult = oldval_adl;// + " X $" + precio_real_adul;						
-								
+				var auxadult = oldval_adl;// + " X $" + precio_real_adul;
 			}
 			var yount = (price_adul.innerHTML = oldval_adl);
-			totaladult.innerHTML = "";
-			var auxprecio = yount * auxprecio_real_adul;
-			console.log(yount);
-			console.log(auxprecio_real_adul);
-			var most_precio = (totalfinal.innerHTML = auxprecio);
-			//console.log("Mostrar precio de adulto  "+most_precio);
+			// Imprimir total amount
+			totaladult.innerHTML = yount + " X " + (precio_real_adul["0"].innerText);
+			//console.log(precio_real_adul["0"].innerText);
 		}
 		if( oldval_nin ) {
 			if (oldval_nin < 1) {
-				var oldval_nin = 0 ;			
+				var oldval_nin = 0 ;
+				totalnino.innerHTML = "";
 			}
 			else {
 				var auxnino = oldval_nin;//+ " X $" + precio_real_nin;
-				var auxprecio = auxnino * precio_real_nin;
-				console.log(auxnino);
 			}
 			var child = (price_nin.innerHTML = oldval_nin);
-			totalnino.innerHTML = "";
-			var most_precio = (totalfinal.innerHTML = auxprecio);
-			//console.log("Mostrar precio de adulto  "+most_precio);
+			totalnino.innerHTML = child + " X " + (precio_real_nin["0"].innerText);
+
 		}
 	});
 
 	/* ==============================================
 			Agregando al .totaladul y totalnino
-	=============================================== */ 
+	=============================================== */
 
-		/*$(".tt_todo").append('<span class="tt_totaladult"></span><span class="tt_totalnino"></span>');
-		
-		var totaltodo = document.getElementsByClassName("tt_todo");
-		var nose_adul = document.getElementById("tt_adul");
-		var nose_nino = document.getElementById("tt_nino");
-		var totalfinal= document.getElementsByClassName("pr_total");
-		
+	// Precio Real de Tour Adulto y Niño
 
-		var temp_prec = precio.innerText;
-		var yount = nose_adul.innerHTML;
-		var child = nose_nino.innerHTML;
+	var precio_real_adul= document.getElementsByClassName(".precio_Tour");
+	var precio_real_nin = document.getElementsByClassName("precio_Tour_n");
+	//console.log(precio_real_adul);
 
-		console.log(yount);
-		console.log(child);
-		totaltodo.innerHTML = yount + " + " + child;
+	// var auxprecio_real_adul = precio_real_adul.innerHTML;
+	// var auxprecio_real_nin = precio_real_nin.innerHTML;
 
-		let prec_final = (yount * 15) + (child * 10);
-		totalfinal.innerHTML = "prec_final";
-		console.log("precio final " + prec_final);*/
-		
-		
+
+
+
+
+	// var auxprecio = yount * auxprecio_real_adul;
+	// console.log(yount);
+	// console.log(auxprecio_real_adul);
+	// var most_precio = (totalfinal.innerHTML = auxprecio);
+
+
+
 
 	/* ==============================================
 				tabs
@@ -217,6 +210,5 @@
     evt.currentTarget.className += " active";
 	}
 
-	
+
 })( jQuery );
-	

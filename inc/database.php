@@ -5,7 +5,7 @@ function emaTour_database(){
 	global $wpdb;
 	// Agregamos un version
 	global $ematour_dbversion;
-	$ematour_dbversion = '0.1';
+	$ematour_dbversion = '1.0';
 
 	// Obtenemos el prefijo
 	$table = $wpdb->prefix . 'reservaciones';
@@ -23,7 +23,8 @@ function emaTour_database(){
 		fecha_in datetime NOT NULL,
 		fecha_out datetime NOT NULL,
 		adulto tinyint NOT NULL,
-		nino tinyint NOT NULL,
+		nino tinyint NOT NULL,		
+		total decimal NOT NULL,
 		mensaje longtext NOT NULL,
 		PRIMARY KEY (id)
 	) $charset_collate; ";
@@ -53,6 +54,7 @@ function emaTour_database(){
 			fecha_out datetime NOT NULL,
 			adulto tinyint NOT NULL,
 			nino tinyint NOT NULL,
+			total decimal NOT NULL,
 			mensaje longtext NOT NULL,
 			PRIMARY KEY (id)
 		) $charset_collate; ";

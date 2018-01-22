@@ -77,12 +77,12 @@
 					<p id="tt_nino">0</p>
 				</td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td>Total amount</td>
 				<td class="text-right tt_todo">
 					<span id="tt_totaladult"></span>
 					<span id="tt_totalnino"></span>
-						<!-- 3x $52 -->
+						
 				</td>
 			</tr>
 			<tr class="total">
@@ -90,7 +90,7 @@
 					<td class="text-right">
 						<p class="pr_total total_booking"></p>
 					</td>
-			</tr>
+			</tr> -->
 		</tbody>
 	</table>
 	<div class="row">

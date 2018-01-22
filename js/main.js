@@ -138,34 +138,44 @@
 		var oldval_adl 				= $button.parent().find("#adulto_booking").val();
 		var oldval_nin 				= $button.parent().find("#nino_booking").val();
 
-		// Suma total
-		var sumatotal = oldval_adl + oldval_nin;
-		console.log(sumatotal);
+		// Agregar Suma con precios
 
-		if (oldval_adl ) {
-			if (oldval_adl < 1) {
-				var oldval_adl = 0;
+		if ((oldval_adl) || (oldval_nin)){
+			if (oldval_adl ) {
+				if (oldval_adl < 1) {
+					var oldval_adl = 0;
+				}
+				else {
+					var auxadult = oldval_adl;// + " X $" + precio_real_adul;
+				}
+				var yount = (price_adul.innerHTML = oldval_adl);
+				// Imprimir total amount
+				totaladult.innerText = (yount + " X " + (precio_real_adul["0"].innerText));
+				var sumattadu = yount * (precio_real_adul["0"].innerText);
+				console.log("dato de adulto "+sumattadu);
 			}
-			else {
-				var auxadult = oldval_adl;// + " X $" + precio_real_adul;
+			if( oldval_nin ) {
+				if (oldval_nin < 1) {
+					var oldval_nin = 0 ;
+					totalnino.innerHTML = "";
+				}
+				else {
+					var auxnino = oldval_nin;//+ " X $" + precio_real_nin;
+				}
+				var child = (price_nin.innerHTML = oldval_nin);
+				totalnino.innerHTML = " + " + child + " X " + (precio_real_nin["0"].innerText);
+				var sumattnin = child * (precio_real_nin["0"].innerText);
+				console.log("dato de nino "+sumattnin);
 			}
-			var yount = (price_adul.innerHTML = oldval_adl);
-			// Imprimir total amount
-			totaladult.innerHTML = yount + " X " + (precio_real_adul["0"].innerText);
-			//console.log(precio_real_adul["0"].innerText);
-		}
-		if( oldval_nin ) {
-			if (oldval_nin < 1) {
-				var oldval_nin = 0 ;
-				totalnino.innerHTML = "";
-			}
-			else {
-				var auxnino = oldval_nin;//+ " X $" + precio_real_nin;
-			}
-			var child = (price_nin.innerHTML = oldval_nin);
-			totalnino.innerHTML = child + " X " + (precio_real_nin["0"].innerText);
+			// FIXME: Falta realizar la suma total
 
+			var sumatotalad = sumattadu;
+			var sumatotalnin = sumattnin;
+			var fin = sumatotalad + sumatotalnin;
+			console.log("dato de final "+fin);
 		}
+
+
 	});
 
 	/* ==============================================
@@ -174,21 +184,6 @@
 
 	// Precio Real de Tour Adulto y Niño
 
-	var precio_real_adul= document.getElementsByClassName(".precio_Tour");
-	var precio_real_nin = document.getElementsByClassName("precio_Tour_n");
-	//console.log(precio_real_adul);
-
-	// var auxprecio_real_adul = precio_real_adul.innerHTML;
-	// var auxprecio_real_nin = precio_real_nin.innerHTML;
-
-
-
-
-
-	// var auxprecio = yount * auxprecio_real_adul;
-	// console.log(yount);
-	// console.log(auxprecio_real_adul);
-	// var most_precio = (totalfinal.innerHTML = auxprecio);
 
 
 

@@ -39,6 +39,7 @@ function ema_registrar_opciones() {
   //$option_name = 'ema_direccion';
   register_setting( $option_group, 'ema_direccion' );
   register_setting( $option_group, 'ema_telefono' );
+  register_setting( $option_group, 'ema_email' );
 }
 
 function mapinew_opciones() { ?>
@@ -56,6 +57,10 @@ function mapinew_opciones() { ?>
         <tr valign="top">
           <th scope="row">Telefono</th>
           <td><input type="text" name="ema_telefono" value="<?php echo esc_attr(get_option('ema_telefono')); ?>"></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Telefono</th>
+          <td><input type="text" name="ema_email" value="<?php echo esc_attr(get_option('ema_email')); ?>"></td>
         </tr>
       </table>
       <?php submit_button() ?>

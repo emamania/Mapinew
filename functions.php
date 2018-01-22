@@ -8,6 +8,8 @@ require get_template_directory() . '/inc/database.php';
 // Funciiones para la reservaciones
 require get_template_directory() . '/inc/reservaciones.php';
 //require get_template_directory() . '/inc/core/walkernav.php';
+// Crear opciones para el Template
+require get_template_directory() . '/inc/opciones.php';
 
 /**********************************************************/
 /* Filtrar Tours ATRACTIVOS */

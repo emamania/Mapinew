@@ -61,8 +61,8 @@ get_header(); ?>
 									<?php $precioTour_n =  get_post_meta( get_the_ID(), 'ema_campos_tours_price_child', true ); ?>
 									<?php if(($precioTour) || $precioTour_n ) { ?>
 										<sup>$</sup>
-										<var class="precio_Tour"> <?php echo $precioTour; ?></var>
-										<var class="precio_Tour_n"> <?php echo $precioTour_n; ?></var>
+										<var class="precio_Tour"><?php echo $precioTour; ?></var>
+										<var style="display:none;" class="precio_Tour_n"><?php echo $precioTour_n; ?></var>
 									<?php } ?>
 								</span>
 							</div>

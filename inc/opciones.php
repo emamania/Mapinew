@@ -1,9 +1,17 @@
 <?php
+/*
 
+@package ema_theme
+
+
+    ===========================
+          ADMIN page
+    ===========================
+*/
 function ema_ajustes() {
 
   $page_title       = 'MapiNew';
-  $menu_title       = 'Ajustes';
+  $menu_title       = 'Mapi Ajustes';
   $capability       = 'administrator';
   $menu_slug        = 'mapinew_ajustes';
   $function         = 'mapinew_opciones';
@@ -19,11 +27,42 @@ function ema_ajustes() {
   add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
 
   add_submenu_page( $parent_slug, $subpage_title, $submenu_title, $capability, $submenu_slug, $subfunction );
+
+  // Llamar al registro de las opciones de nuestro theme
+  add_action('admin_init', 'ema_registrar_opciones');
 }
 add_action( 'admin_menu','ema_ajustes' );
 
-function mapinew_opciones() {
+function ema_registrar_opciones() {
+  // Registrar opciones, una por campo
+  $option_group = 'ema_opciones_grupo';
+  //$option_name = 'ema_direccion';
+  register_setting( $option_group, 'ema_direccion' );
+  register_setting( $option_group, 'ema_telefono' );
+}
 
+function mapinew_opciones() { ?>
+  <div class="wrap">
+    <h1>Ajustes Mapi New</h1>
+
+    <form class="" action="options.php" method="post">
+      <?php settings_fields('ema_opciones_grupo'); ?>
+      <?php do_settings_sections('ema_opciones_grupo'); ?>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Dirreccion</th>
+          <td><input type="text" name="ema_direccion" value="<?php echo esc_attr(get_option('ema_direccion')); ?>"></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Telefono</th>
+          <td><input type="text" name="ema_telefono" value="<?php echo esc_attr(get_option('ema_telefono')); ?>"></td>
+        </tr>
+      </table>
+      <?php submit_button() ?>
+    </form>
+
+  </div>
+<?php
 }
 
 function mapinew_reservaciones() {
@@ -72,3 +111,19 @@ function mapinew_reservaciones() {
   <?php
 
 }
+
+// Agregando Enqueue lado Administrador
+
+function ema_admin_enqueue_scripts() {
+  global $pagenow, $typenow;
+  // $screen = get_current_screen();
+  // var_dump($screen->post_type);
+	// var_dump($pagenow, $typenow);
+
+	if ( ($pagenow == 'post.php' || $pagenow == 'post-new.php') && $typenow == 'tours' ) {
+		wp_enqueue_style( 'ema-admin-css', plugins_url( 'css/ema_admin.css', __FILE__ ) );
+		wp_enqueue_script( 'ema-adminjs', plugins_url( 'js/ema_admin.js', __FILE__ ), array( 'jquery', 'jquery-ui-datepicker' ), '20160204', true );
+  }
+
+}
+add_action( 'admin_enqueue_scripts', 'ema_admin_enqueue_scripts' );

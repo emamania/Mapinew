@@ -51,16 +51,16 @@ function mapinew_opciones() { ?>
       <?php do_settings_sections('ema_opciones_grupo'); ?>
       <table class="form-table">
         <tr valign="top">
-          <th scope="row">Dirreccion</th>
-          <td><input type="text" name="ema_direccion" value="<?php echo esc_attr(get_option('ema_direccion')); ?>"></td>
-        </tr>
-        <tr valign="top">
-          <th scope="row">Telefono</th>
+          <th scope="row">Telefono de Empresa</th>
           <td><input type="text" name="ema_telefono" value="<?php echo esc_attr(get_option('ema_telefono')); ?>"></td>
         </tr>
         <tr valign="top">
-          <th scope="row">Telefono</th>
-          <td><input type="text" name="ema_email" value="<?php echo esc_attr(get_option('ema_email')); ?>"></td>
+          <th scope="row">Direccion del local</th>
+          <td><input class="regular-text ltr" type="text" name="ema_direccion" value="<?php echo esc_attr(get_option('ema_direccion')); ?>"></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">E-mail de reservaciones</th>
+          <td><input class="regular-text ltr" type="text" name="ema_email" value="<?php echo esc_attr(get_option('ema_email')); ?>"></td>
         </tr>
       </table>
       <?php submit_button() ?>

@@ -151,15 +151,7 @@ function ematours_widgets() {
 		'before_title'								=> '<h4>',
 		'after_title'									=> '</h4>'
 	) );
-	// This section is to show information on the footer
-	register_sidebar( array(
-		'name'												=> 'Seccion Informativa Footer',
-		'id'													=> 'sidebar-footer',
-		'before_widget'								=> '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"><div class="footer_content">',
-		'after_widget'								=> '</div></div>',
-		'before_title'								=> '<h4>',
-		'after_title'									=> '</h4>'
-	) );
+	
 	// This section is to Change or Edit number phone
 	register_sidebar( array(
 		'name'												=> 'Informacion de Telefonos',

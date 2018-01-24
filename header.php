@@ -12,6 +12,15 @@
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta charset="<?php bloginfo( 'charset' ); ?>"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Machupicchu New">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#e04f67">
+    <meta name="application-name" content="Machupicchu New">
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png" sizes="192x192">
+
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php if( is_singular() && pings_open( get_queried_object() ) ): ?>
       <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -33,7 +42,7 @@
             <div class="col-sm-6 col-xs-6">
 						<?php if( is_active_sidebar( 'sidebar-phones' ) ): ?>
 						<?php dynamic_sidebar( 'sidebar-phones' ); ?>
-						<?php endif; ?>              
+						<?php endif; ?>
             </div>
             <div class="col-sm-6 col-xs-6">
               <div class="top_links">
@@ -124,8 +133,8 @@
       </div>
     </header>
 		<!-- Banner -->
-		
+
 		<?php if (is_front_page() ) {
 			get_template_part( 'banner', 'home' );
-			} 
+			}
 		?>

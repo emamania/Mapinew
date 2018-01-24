@@ -85,7 +85,7 @@
             <div class="main_menu">
               <div id="header_menu">
 								<a href="<?php echo esc_url( home_url('/') ); ?>">
-									<img src="<?php echo get_template_directory_uri(); ?> /img/logo_sticky.png" width="160" height="34" alt="Machupicchu New">
+									<img src="<?php echo get_template_directory_uri(); ?> /img/logo_sticky.png" width="160" height="34" alt="Machupicchu New - tour to machupicchu - Travel to Machupicchu">
 								</a>
   						</div>
   						<a href="#" class="open_close" id="close_in">

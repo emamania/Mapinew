@@ -123,13 +123,13 @@ header {
     width: 160px;
     height: 34px;
     display: block;
+    text-indent: -9999px;
+    z-index: 10;
+    margin: 0;
     background-image: url(../img/logo.png);
     background-repeat: no-repeat;
     background-position: left top;
-    background-size: 160px 34px;
-    text-indent: -9999px;
-    z-index: 10;
-    margin: 0; }
+    background-size: 160px 34px; }
 
 #close_in, #header_menu, .cmn-toggle-switch {
   display: none; }

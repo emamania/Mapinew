@@ -106,6 +106,8 @@ add_action( 'init', 'register_menus' );
 //crear una funcion para lanzar despues del tema
 function ema_setup() {
 	add_theme_support( 'post-thumbnails' );
+	//add_theme_support( 'title-tag' );  Agrega title a las pages
+
 
 	// filtro de pagina de Atractivos
 	add_image_size( 'tour_buscado', 800, 533, true );
@@ -130,6 +132,15 @@ function ema_setup() {
 }
 add_action( 'after_setup_theme', 'ema_setup' );
 
+function ema_custom_logo() {
+	$logo = array (
+		'width'	=> 160,
+		'height' => 34
+	);
+	add_theme_support( 'custom-logo', $logo );
+}
+add_action( 'after_setup_theme', 'ema_custom_logo' );
+
 /**********************************************************/
 /* Wiggets */
 /**********************************************************/
@@ -151,7 +162,7 @@ function ematours_widgets() {
 		'before_title'								=> '<h4>',
 		'after_title'									=> '</h4>'
 	) );
-	
+
 	// This section is to Change or Edit number phone
 	register_sidebar( array(
 		'name'												=> 'Informacion de Telefonos',

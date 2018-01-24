@@ -88,6 +88,7 @@ function mapinew_reservaciones() {
             <th class="manage-column">Nro Niños</th>
             <th class="manage-column">Cobrar</th>
             <th class="manage-column">Mensaje</th>
+            <th class="manage-column">Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -107,6 +108,9 @@ function mapinew_reservaciones() {
                 <td><?php echo $registro['nino']; ?></td>
                 <td><?php echo $registro['total']; ?></td>
                 <td><?php echo $registro['mensaje']; ?></td>
+                <td>
+                  <a href="#" class="borrar_registro" data-reservaciones="<?php echo $registro['id']; ?>">Eliminar</a>
+                </td>
               </tr>
             <?php } ?>
         </tbody>
@@ -118,7 +122,6 @@ function mapinew_reservaciones() {
 }
 
 // Agregando Enqueue lado Administrador
-
 function ema_admin_enqueue_scripts() {
   global $pagenow, $typenow;
   // $screen = get_current_screen();
@@ -129,6 +132,17 @@ function ema_admin_enqueue_scripts() {
 		wp_enqueue_style( 'ema-admin-css', plugins_url( 'css/ema_admin.css', __FILE__ ) );
 		wp_enqueue_script( 'ema-adminjs', plugins_url( 'js/ema_admin.js', __FILE__ ), array( 'jquery', 'jquery-ui-datepicker' ), '20160204', true );
   }
+  wp_enqueue_style( 'sweetalert', $src = get_template_directory_uri() . '/css/sweetalert2.min.css' );
+  wp_enqueue_script( 'sweetalertjs', $src = get_template_directory_uri() . '/js/sweetalert2.min.js', $deps = array('jquery'), $ver = '1.0', $in_footer = true );
+
+  wp_enqueue_script( 'adminjs', get_template_directory_uri() . '/js/admin-ajax.js', array('jquery'), $ver = '1.0', $in_footer = true );
+
+  // Enviar la URL de WP Ajax al adminjs
+  wp_localize_script(
+    'adminjs',
+    'url_eliminar',
+    array('ajaxurl' => admin_url('admin-ajax.php'))
+  );
 
 }
 add_action( 'admin_enqueue_scripts', 'ema_admin_enqueue_scripts' );

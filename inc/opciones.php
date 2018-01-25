@@ -59,7 +59,7 @@ function mapinew_opciones() { ?>
           <td><input class="regular-text ltr" type="text" name="ema_direccion" value="<?php echo esc_attr(get_option('ema_direccion')); ?>"></td>
         </tr>
         <tr valign="top">
-          <th scope="row">E-mail de reservaciones</th>
+          <th scope="row">Correo de reservas</th>
           <td><input class="regular-text ltr" type="text" name="ema_email" value="<?php echo esc_attr(get_option('ema_email')); ?>"></td>
         </tr>
       </table>
@@ -78,15 +78,14 @@ function mapinew_reservaciones() {
         <thead>
           <tr>
             <th class="manage-column">ID</th>
+            <th class="manage-column">Name Tour</th>
             <th class="manage-column">Nombre</th>
             <th class="manage-column">Correo</th>
             <th class="manage-column">Telefono</th>
-            <th class="manage-column">Whatsaap</th>
             <th class="manage-column">Check-in</th>
             <th class="manage-column">Check-out</th>
             <th class="manage-column">Nro Pax</th>
             <th class="manage-column">Nro Niños</th>
-            <th class="manage-column">Cobrar</th>
             <th class="manage-column">Mensaje</th>
             <th class="manage-column">Eliminar</th>
           </tr>
@@ -98,15 +97,14 @@ function mapinew_reservaciones() {
             foreach ($registros as $registro) { ?>
               <tr>
                 <td><?php echo $registro['id']; ?></td>
+                <td><strong><?php echo $registro['nameT']; ?></strong></td>
                 <td><?php echo $registro['nombre']; ?></td>
                 <td><?php echo $registro['correo']; ?></td>
                 <td><?php echo $registro['telefono']; ?></td>
-                <td><?php echo $registro['whatsaap']; ?></td>
                 <td><?php echo $registro['fecha_in']; ?></td>
                 <td><?php echo $registro['fecha_out']; ?></td>
                 <td><?php echo $registro['adulto']; ?></td>
                 <td><?php echo $registro['nino']; ?></td>
-                <td><?php echo $registro['total']; ?></td>
                 <td><?php echo $registro['mensaje']; ?></td>
                 <td>
                   <a href="#" class="borrar_registro" data-reservaciones="<?php echo $registro['id']; ?>">Eliminar</a>

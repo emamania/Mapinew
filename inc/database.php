@@ -16,15 +16,14 @@ function emaTour_database(){
 	// Agregamos la estructura de la DB
 	$sql = "CREATE TABLE $table (
 		id mediumint(9) NOT NULL AUTO_INCREMENT,
+		nameT varchar(50) NOT NULL,
 		nombre varchar(50) NOT NULL,
 		correo varchar(50) DEFAULT '' NOT NULL,
 		telefono varchar(15) NOT NULL,
-		whatsaap varchar(15) NOT NULL,
 		fecha_in datetime NOT NULL,
 		fecha_out datetime NOT NULL,
 		adulto tinyint NOT NULL,
-		nino tinyint NOT NULL,		
-		total decimal NOT NULL,
+		nino tinyint NOT NULL,
 		mensaje longtext NOT NULL,
 		PRIMARY KEY (id)
 	) $charset_collate; ";
@@ -46,15 +45,14 @@ function emaTour_database(){
 		//  Aqui realizarias las actualizaciones
 		$sql = "CREATE TABLE $table (
 			id mediumint(9) NOT NULL AUTO_INCREMENT,
+			nameT varchar(50) NOT NULL,
 			nombre varchar(50) NOT NULL,
 			correo varchar(50) DEFAULT '' NOT NULL,
 			telefono varchar(15) NOT NULL,
-			whatsaap varchar(15) NOT NULL,
 			fecha_in datetime NOT NULL,
 			fecha_out datetime NOT NULL,
 			adulto tinyint NOT NULL,
 			nino tinyint NOT NULL,
-			total decimal NOT NULL,
 			mensaje longtext NOT NULL,
 			PRIMARY KEY (id)
 		) $charset_collate; ";

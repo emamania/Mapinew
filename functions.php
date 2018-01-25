@@ -1,4 +1,10 @@
 <?php
+// Añadir ReCaptcha
+function ema_agregar_recaptcha() { ?>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+<?php
+}
+add_action( 'wp_head', 'ema_agregar_recaptcha' );
 
 require get_template_directory() . '/inc/cleanup.php';
 // require get_template_directory() . '/inc/function-admin.php';

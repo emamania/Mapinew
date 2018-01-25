@@ -14,18 +14,18 @@
 				<input class="form-control" type="email" id="email_booking" name="email_booking">
 			</div>
 		</div>
+		<div class="hidden">
+			<div class="form-group">
+				<label for="nameT_booking">name T</label>
+				<input class="form-control" type="text" id="nameT_booking" name="nameT_booking" value="<?php the_title();?>">
+			</div>
+		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6 col-sm-6">
+		<div class="col-md-12 col-sm-12">
 			<div class="form-group">
 				<label for="phone_booking"><i class="fa fa-phone"></i>Nro Telefonico</label>
 				<input class="form-control" type="text" id="phone_booking" name="phone_booking">
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-6">
-			<div class="form-group">
-				<label for="whatsaap_booking"><i class="fa fa-whatsapp"></i>Nro de Whatsaap</label>
-				<input class="form-control" type="text" id="whatsaap_booking" name="whatsaap_booking">
 			</div>
 		</div>
 	</div>
@@ -99,6 +99,7 @@
 			<textarea name="mensaje_booking" id="mensaje_booking" placeholder="Escribe aqui tu mensaje" class="form-control" cols="30" rows="10" style="overflow:hidden;height:70px;margin-bottom:20px;" ></textarea>
 		</div>
 	</div>
+	<div class="g-recaptcha" data-sitekey="6LfcM0IUAAAAAAli-48_Ym62zHpiu_Vze3zHDMOi"></div>
 	<input type="submit" name="reserva_booking" class="btn_booking button">
 	<input type="hidden" name="oculto_booking" value="1">
 

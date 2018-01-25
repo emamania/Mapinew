@@ -2,9 +2,9 @@
 		<?php
 			$pagina_blog = get_option('page_for_posts');
 			$imagen_id = get_post_thumbnail_id( $pagina_blog );
-			$imagen = wp_get_attachment_image_src( $imagen_id, 'single_tour_img_header');		
+			$imagen = wp_get_attachment_image_src( $imagen_id, 'single_tour_img_header');
 		?>
-		
+
 		<section class="main_wrapper">
 			<div class="wrapper_banner" id="rev_slider">
 			<!-- get_the_post_thumbnail_url(); -->
@@ -20,20 +20,20 @@
 				<ul>
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Home</a></li>
-				</ul>	
+					<li><a href="#"><?php the_title(); ?></a></li>
+				</ul>
 			</div>
-		</div>		
-		
+		</div>
+
     <section id="blog" class="container margin_60">
-      <div class="row">				
-        <div class="col-md-9">					
+      <div class="row">
+        <div class="col-md-9">
 			<div class="box_style">
-				<?php while(have_posts()): the_post(); ?>					
+				<?php while(have_posts()): the_post(); ?>
 				<article>
-					<div class="post">								
+					<div class="post">
 						<a href="<?php the_permalink(); ?>">
-							<img src="<?php the_post_thumbnail_url('blog_img_list'); ?>" alt="">	
+							<img src="<?php the_post_thumbnail_url('blog_img_list'); ?>" alt="">
 						</a>
 						<div class="post_info">
 							<div class="post_left">
@@ -57,16 +57,15 @@
 							<?php the_excerpt(); ?>
 							<a href="<?php the_permalink(); ?>" class="btn_1">Read More</a>
 						</div>
-						
-					</div>							
+
+					</div>
 				</article>
 				<hr>
-				<?php endwhile; // end of the loop. ?> 
+				<?php endwhile; // end of the loop. ?>
 			</div><!-- end box style-->
 			<hr>
 			<div style=" text-align: center; ">
 				<?php echo paginate_links(); ?>
-				hla mundo
 				<!-- <ul class="pagination">
 					<li><a href="http://">Prev</a></li>
 					<li class="active"><a href="http://">1</a></li>
@@ -76,13 +75,13 @@
 					<li><a href="http://">5</a></li>
 					<li><a href="http://">Next</a></li>
 				</ul> -->
-			</div>         
+			</div>
         </div>
 			<div class="col-md-3">
-				<?php get_sidebar('blog_sidebar'); ?>					
-			</div>				
+				<?php get_sidebar('blog_sidebar'); ?>
+			</div>
 
       </div>
-    </section>		
-		
+    </section>
+
   <?php get_footer(); ?>

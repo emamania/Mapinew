@@ -3,12 +3,14 @@
 </div>
 <!-- Division de tours -->
 <div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="show_tours">
 	<!-- Start the Loop -->
 	<?php
 	$args = array(
 		'post_type' 			=> 'tours',
 		'orderby'        	=> 'rand',
-		'posts_per_page'		=> '1',
+		'posts_per_page'		=> '-1',
 	);
 	$args1 = array(
 		'post_type' 			=> 'tours',
@@ -26,32 +28,20 @@
 
 		while ( $the_query->have_posts() ) {
 			$the_query->the_post();
-				echo '<div class="col-md-6 col-sm-6 col-xs-12">';
-				echo '<div class="adv_main_contentbg">';
-				echo '<a href="'.the_permalink().'"';
+				echo '<article class="items_showTours">';
+				echo '<a href="' . get_the_permalink() . '">';
 				echo '<img src="' . get_the_post_thumbnail_url() . '">';
 				echo '</a>';
-				echo '<h5 class="adv_taxo">taxonomia</h5>';
-				echo '<section class="adv_content">';
-				echo '<div class="col-md-9">';
-				echo '<div class="adv_textoo"><h4>'. the_title() .'</h4></div>';
-				echo '</div>';
-				echo '<div class="col-md-3">';
-				echo '<div class="adv_price">';
-				echo '<p>';
-				$precioTour =  get_post_meta( get_the_ID(), 'ema_campos_tours_price', true );
-				if($precioTour) {
-				echo '<span><sup>$</sup>'. $precioTour.'*</span>';}
-				echo '</p>por persona';
-				echo '</div>';
-				echo '</div>';
-				echo '</section>';
-				echo '</div></div>';
-		}
+				echo '<div class="show_tours_text">';
+				echo '<p>'. get_the_title() .'</p>';
+				echo '<span><a href="' . get_the_permalink() . '">Ver mas</a></span>';
+				echo '</div></article>';		}
 		/* Restore original Post Data */
 		wp_reset_postdata();
 	} else {
 		// no posts found
 		echo '<p>Tours no encontrados -_-!!</p>';
 	}?>
+		</div>
+	</div>
 </div>

@@ -134,8 +134,8 @@ function ema_setup() {
 	add_image_size( 'blog_img_list', 950, 375, true );
 
 	// Front Page
-	add_image_size( 'adv_img_big', 575, 580, true );
-	add_image_size( 'adv_img_small', 280, 285, true );
+	add_image_size( 'allTours_img', 605, 300, true );
+	add_image_size( 'show_tours_img', 565, 610, true );
 
 }
 add_action( 'after_setup_theme', 'ema_setup' );
@@ -183,3 +183,17 @@ function ematours_widgets() {
 
 }
 add_action( 'widgets_init', 'ematours_widgets' );
+
+/**********************************************************/
+/* THE EXCERPT */
+/**********************************************************/
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function ema_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'ema_custom_excerpt_length', 999 );

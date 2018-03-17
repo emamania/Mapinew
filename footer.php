@@ -71,6 +71,10 @@
         </div>
       </div>
     </div>
+    <div class="grid_contactanos">
+    	<div class="messenger"><a href="https://m.me/machupicchunew"><img src="<?php bloginfo('template_directory'); ?>/img/messenger.svg" alt="Messenger"></a></div>
+    	<div class="whatsapp"><a href="https://api.whatsapp.com/send?phone=51997329168"><img src="<?php bloginfo('template_directory'); ?>/img/whatsapp.svg" alt="Whatsapp"></a></div>
+    </div>
   </footer>
   <?php wp_footer(); ?>
   </body>

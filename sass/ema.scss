@@ -330,7 +330,21 @@ a.dropdown-toggle.icon-search {
 		text-shadow: 1px 1px 2px #000;
 		position: relative;
 		display: flex;
-		height: 500px;
+
+		img{
+			width:100%;
+			height: 420px;
+			object-fit: cover;
+
+			@media only screen and (min-width: 650px) {
+				height: 500px;
+			}
+			@media only screen and (min-width: 1000px) {
+				height: 500px;
+			}
+		}
+
+
 		&::after {
 			position: absolute;
 			top: 0;
@@ -340,10 +354,7 @@ a.dropdown-toggle.icon-search {
 			height: 100%;
 			background-color: rgba($color: #000000, $alpha: .4);
 		}
-		img{
-			width:100%;
-			min-height: 450px;
-		}
+
 		// single page
 		.parallax_content {
 			position: absolute;
@@ -392,13 +403,24 @@ a.dropdown-toggle.icon-search {
 			justify-content: center;
 			align-items: center;
 			align-content: center;
-			top: 275px;
+			bottom: 15%;
 			width: 100%;
 			z-index: 5;
 
 			h2{
 				font-family: 'Nothing You Could Do', cursive;
-				font-size: 2em;
+				font-size: 2.5em;
+				text-transform: uppercase;
+				@media only screen and (min-width: 650px) {
+					h2 {
+						font-size: 4em;
+					}
+				}
+				@media only screen and (min-width: 1000px) {
+					h2 {
+						font-size: 4em;
+					}
+				}
 			}
 			p {
 				font-family: 'Montserrat', sans-serif;
@@ -572,82 +594,6 @@ a.dropdown-toggle.icon-search {
 			width: 150px;
 			height: 150px;
 			display: block;
-		}
-	}
-}
-
-// Front Page => Adventure
-#adventure {
-	padding: 2em 0;
-	display: block;
-	& .section__title {
-		text-align: center;
-		font-weight: 700;
-
-
-    font-size: 2.6rem;
-    line-height: 1.2;
-    padding: 3em 0;
-    margin: auto;
-	}
-	& .adv_main_contentbg {
-		position: relative;
-		z-index: 1;
-		& img {
-			background-repeat: no-repeat;
-			height: 450px;
-			background-size: contain;
-			width: 100%;
-		}
-	}
-	& .adv_taxo {
-		margin-top: 0;
-    color: #fff;
-    font-weight: normal;
-    text-transform: uppercase;
-    background-color: #000;
-    background-color: rgba(0,0,0,0.7);
-    display: inline;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: .35294118em .11764706em .35294118em .70588235em;
-	}
-	& .adv_content {
-		border-bottom: 1px solid #c7c7c7!important;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-bottom: 0;
-    border-radius: 0;
-		opacity: .85;
-		background: #fff;
-		height: 50px;
-		& .adv_textoo {
-			position: relative;
-			top: 0 !important;
-			float: right;
-			line-height: 1.16em;
-			& h4 {
-				background: red;
-			}
-		}
-		& .adv_price {
-			position: relative;
-			top: 0 !important;
-			float: right;
-			line-height: 1.16em;
-			& p {
-				text-align: center;
-				margin-bottom: 0;
-				padding-top: .9em;
-				& span {
-					font-size: 1.8em;
-					font-weight: bold;
-					color: $black;
-				}
-			}
 		}
 	}
 }
@@ -1708,73 +1654,101 @@ a.dropdown-toggle.icon-search {
 	#most_wanted {}
 }
 
-// SHOW TOURS MAIN PAGE
-.show_tours {
+// Front Page => Adventure
+#adventure {
+	padding: 2em 0;
+	display: block;
 
-  display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	grid-template-rows: repeat(5, 370px);
-	grid-gap: 10px;
+	& .section__title {
+		text-align: center;
+		font-weight: 700;
 
-	@media only screen and (min-width: 650px) {
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(2, 270px);
+
+    font-size: 2.6rem;
+    line-height: 1.2;
+    padding: 3em 0;
+    margin: auto;
 	}
-	@media only screen and (min-width: 1000px) {
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: repeat(2, 270px);
-	}
 
-	& .items_showTours {
-		position: relative;
-		font-size: 1em;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	// SHOW TOURS MAIN PAGE HOME PAGE
+	.show_tours {
+
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		//grid-template-rows: repeat(2, 370px);
+		grid-gap: 10px;
 
 		@media only screen and (min-width: 650px) {
-			&:first-child{
-				grid-column: span 1;
-				grid-row: span 2;
-			}
+			grid-template-columns: repeat(2, 1fr);
+			// grid-template-rows: repeat(2, 270px);
 		}
 		@media only screen and (min-width: 1000px) {
-			&:first-child{
-				grid-column: span 2;
-				grid-row: span 2;
-			}
+			grid-template-columns: repeat(4, 1fr);
+			// grid-template-rows: repeat(2, 270px);
 		}
 
-		& img:first-child {
-			width: 100%;
-			height: 100%;
-	    object-fit: cover;
-		}
-		& .show_tours_text {
-			position: absolute;
-	    background: #ffffffcf;
-	    width: 100%;
-	    bottom: 0;
-	    padding: 1em .5em;
-			& p,span {
-				display: inline-block;
-				width: 49%
+		& .items_showTours {
+			position: relative;
+			font-size: 1em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@media only screen and (min-width: 650px) {
+				&:first-child{
+					grid-column: span 2;
+					grid-row: span 2;
+					width: 100%;
+    			display: block;
+					& img {
+						width: 100%;
+						height: 450px;
+					}
+				}
 			}
-			& p {
-				text-align: left;
-		    margin: 0;
-			}
-			& span {
-				text-align: right;
-				& a{
-					background: red;
-					padding: .3em 1em;
-					border-radius: 4px;
-					color: #fff;
+			@media only screen and (min-width: 1000px) {
+				&:first-child{
+					grid-column: span 2;
+					grid-row: span 2;
+					& img {
+						width: 100%;
+						height: 610px;
+					}
 				}
 			}
 
+			& img {
+				width: 100%;
+				height: 300px;
+				object-fit: cover;
+			}
+			& .show_tours_text {
+				position: absolute;
+				background: #ffffffcf;
+				width: 100%;
+				bottom: 0;
+				padding: 1em .5em;
+				& p,span {
+					display: inline-block;
+					width: 49%
+				}
+				& p {
+					text-align: left;
+					margin: 0;
+				}
+				& span {
+					text-align: right;
+					& a{
+						background: red;
+						padding: .3em 1em;
+						border-radius: 4px;
+						color: #fff;
+					}
+				}
+
+			}
 		}
+
 	}
 
 }
@@ -1805,13 +1779,14 @@ a.dropdown-toggle.icon-search {
 	}
 	& .textTopallTours {
 		position: absolute;
-    top: 270px;
+    top: 250px;
 		color: #fff;
 		width: 100%;
 		font-size: 20px;
 		display: flex;
 		font-weight: 600;
 		text-shadow: 1px 2px 5px #000;
+		padding: .5em;
 		& span {
 			display: flex;
 			&:last-child{
@@ -1854,5 +1829,33 @@ a.dropdown-toggle.icon-search {
 		width: 100%;
 		height: 300px;
 		object-fit: cover;
+	}
+}
+
+
+// SVG DE FACE + Whatsapp
+.grid_contactanos {
+	display: none;
+	position: fixed;
+	bottom: 70px;
+	right: 28px;
+
+	& div {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		margin-bottom: 5px;
+		box-shadow: 1px 3px 13px #000;
+	}
+
+	@media only screen and (max-device-width: 680px) and (min-device-width: 280px){
+		display: block !important;
+
+		& .messenger {
+		    background: #0084ff;
+		}
+		& .whatsapp {
+	    background: #189d0e;
+		}
 	}
 }

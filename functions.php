@@ -17,6 +17,8 @@ require get_template_directory() . '/inc/reservaciones.php';
 // Crear opciones para el Template
 require get_template_directory() . '/inc/opciones.php';
 
+// require get_template_directory() . 'c:\xampp\htdocs\new\wp-content\../cpt_atractivos/cpt_atractivos.php';
+
 /**********************************************************/
 /* Filtrar Tours ATRACTIVOS */
 /**********************************************************/

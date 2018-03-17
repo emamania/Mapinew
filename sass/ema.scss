@@ -395,16 +395,37 @@ a.dropdown-toggle.icon-search {
 			top: 275px;
 			width: 100%;
 			z-index: 5;
+
 			h2{
 				font-family: 'Nothing You Could Do', cursive;
-				font-size: 6em;
+				font-size: 2em;
 			}
 			p {
 				font-family: 'Montserrat', sans-serif;
 				font-size: 1.4em;
 			}
+
+			@media only screen and (min-width: 650px) {
+				h2 {
+					font-size: 4em;
+				}
+			}
+			@media only screen and (min-width: 1000px) {
+				h2 {
+					font-size: 4em;
+				}
+			}
+
+
 		}
 	}
+}
+.title {
+	text-align: center;
+	font-weight: 300;
+	font-size: 32px;
+	margin-bottom: 1.1em;
+	font-family: "Montserrat",Arial,sans-serif;
 }
 
 #most_wanted {
@@ -1685,4 +1706,153 @@ a.dropdown-toggle.icon-search {
 // THE MOST WANTED
 @media only screen and (max-width: 480px) {
 	#most_wanted {}
+}
+
+// SHOW TOURS MAIN PAGE
+.show_tours {
+
+  display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(5, 370px);
+	grid-gap: 10px;
+
+	@media only screen and (min-width: 650px) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 270px);
+	}
+	@media only screen and (min-width: 1000px) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 270px);
+	}
+
+	& .items_showTours {
+		position: relative;
+		font-size: 1em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media only screen and (min-width: 650px) {
+			&:first-child{
+				grid-column: span 1;
+				grid-row: span 2;
+			}
+		}
+		@media only screen and (min-width: 1000px) {
+			&:first-child{
+				grid-column: span 2;
+				grid-row: span 2;
+			}
+		}
+
+		& img:first-child {
+			width: 100%;
+			height: 100%;
+	    object-fit: cover;
+		}
+		& .show_tours_text {
+			position: absolute;
+	    background: #ffffffcf;
+	    width: 100%;
+	    bottom: 0;
+	    padding: 1em .5em;
+			& p,span {
+				display: inline-block;
+				width: 49%
+			}
+			& p {
+				text-align: left;
+		    margin: 0;
+			}
+			& span {
+				text-align: right;
+				& a{
+					background: red;
+					padding: .3em 1em;
+					border-radius: 4px;
+					color: #fff;
+				}
+			}
+
+		}
+	}
+
+}
+
+// Home Page List TOURS
+.ListaTours {
+  padding: 2.5em 0 6em 0;
+}
+.allTours {
+	display: grid;
+	grid-template-columns: 1fr;
+	// grid-template-columns: repeat(3, 1fr);
+	//grid-template-rows: repeat(4, 320px);
+	grid-gap: 10px;
+
+	@media only screen and (min-width: 650px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media only screen and (min-width: 1000px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	& .itemallTours {
+		position: relative;
+		background: #fff;
+  	border-bottom: 1px solid #c7c7c7;
+
+	}
+	& .textTopallTours {
+		position: absolute;
+    top: 270px;
+		color: #fff;
+		width: 100%;
+		font-size: 20px;
+		display: flex;
+		font-weight: 600;
+		text-shadow: 1px 2px 5px #000;
+		& span {
+			display: flex;
+			&:last-child{
+				font-size: 16px;
+			}
+		}
+	}
+	& .textallTours {
+		padding: 1em .7em;
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		& p,span {
+			//display: inline-block;
+		}
+		& p {
+			//padding-right: .5em;
+		}
+		& span {
+			text-align: center;
+			& i {
+				text-transform: uppercase;
+				font-size: .8em;
+				font-weight: 700;
+			}
+			& var {
+				display: block;
+				padding-bottom: .5em;
+				font-size: 18px;
+    		font-weight: 700;
+			}
+			& a {
+				background: $red;
+				padding: .3em 1em;
+				color: $white;
+			}
+		}
+	}
+
+	& img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+	}
 }

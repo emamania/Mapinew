@@ -1,12 +1,130 @@
 <?php get_header(); ?>
-		<?php 
+		<?php
 			$pagina_blog = get_option('page_for_posts');
 			$imagen_id = get_post_thumbnail_id( $pagina_blog );
-			$imagen = wp_get_attachment_image_src( $imagen_id, 'img_blog');		
+			$imagen = wp_get_attachment_image_src( $imagen_id, 'img_blog');
 		?>
-		</header>		
+		</header>
 		<!-- List the Most Wanted -->
-		<?php get_sidebar('list_tour'); ?>    
+		<?php get_sidebar('list_tour'); ?>
+		<section class="ListaTours">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="title">Los viajes mas cotizados y mas buscados</h3>
+					</div>
+					<div class="col-md-12">
+						<div class="allTours">
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco Clasico</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>249</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco by Car</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>449</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco by Car</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>449</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco by Car</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>449</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco by Car</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>449</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco by Car</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>449</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco by Car</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>449</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco by Car</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>449</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+							<div class="itemallTours">
+								<img src="http://www.machupicchugolden.com/wp-content/uploads/2017/03/machupicchu-cusco.jpg" alt="">
+								<div class="textTopallTours">
+									<span>Cusco by Car</span>
+									<span>4 dias / 3 noches</span>
+								</div>
+								<div class="textallTours">
+										<p>Programa alternativo para los turistas que deseen conocer Machupicchu en tren y atractivos del Cusco.</p>
+										<span><i>usd</i><var>449</var><a href="#">Reservar</a></span>
+								</div>
+							</div>
+
+
+						</div>
+
+
+					</div>
+				</div>
+
+			</div>
+
+		</section>
 		<!-- Que quieres Hacer -->
     <section id="travelSytle">
       <div class="container">
@@ -25,10 +143,10 @@
 					<div class="col-md-12">
 						<div class="styleTitle">
 							<h4>¿Qué quieres hacer?</h4>
-						</div>            
+						</div>
 					</div>
 					<!-- list of Style -->
-					<div class="col-md-12">					
+					<div class="col-md-12">
 						<div class="styleItems">
 							<div class="item active">
 								<div class="col-md-4 col-sm-6 col-xs-12">
@@ -37,7 +155,7 @@
 										<img src="https://www.peruforless.com/content-files/uploads/Salkantay-Trek-to-Machu-Picchu.jpg" class="img-responsive">
 									</a>
 									<div class="destination_title">
-										<div>Trekking</div>	
+										<div>Trekking</div>
 									</div>
 								</div>
 							</div>
@@ -48,7 +166,7 @@
 										<img src="https://www.peruforless.com/content-files/uploads/Cusco-City-local.jpg" class="img-responsive">
 									</a>
 									<div class="destination_title">
-										<div>Cultura y Historia</div>	
+										<div>Cultura y Historia</div>
 									</div>
 								</div>
 							</div>
@@ -59,47 +177,76 @@
 										<img src="https://www.peruforless.com/content-files/uploads/Huayna-Picchu-mountain.jpg" class="img-responsive">
 									</a>
 									<div class="destination_title">
-										<div>Aventura</div>	
+										<div>Aventura</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
 						<a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> -->
-					
+
 					</div>
 
         </div><!-- end row -->
-				
-				
-				
-				
+
+
+
+
 			</div><!-- end container -->
     </section>
     <section id="adventure">
       <div class="container">
-				<!-- <div class="row">
-					<div class="col-md-6 col-sm-6 col-xs-12">
-						<div class="adv_main_contentbg" style='<?php the_post_thumbnail('adv_img_big'); ?>'>
-							<h5 class="adv_taxo"><?php the_title(); ?>soy titulo</h5>
-							<section class="adv_content">
-								<div class="adv_box_content">
-									<div class="adv_price">
-										<p>
-											<span><?php ?></span>
-										</p>
-										por persona
-									</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<h3 class="title">¡Date prisa! Estas son las mejores ofertas para hoy en Machupicchu New</h2>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="show_tours">
+							<div class="items_showTours">
+								<img src="https://a.travel-assets.com/dynamic_destination_images/179892.jpg" alt="">
+
+								<div class="show_tours_text">
+									<p>Tour 1</p>
+									<span><a href="#">button 1</a></span>
 								</div>
-							</section>
+							</div>
+							<div class="items_showTours">
+								<img src="https://a.travel-assets.com/dynamic_destination_images/179899.jpg" alt="">
+
+								<div class="show_tours_text">
+									<a href="#">
+										<p>Tour 2</p>
+									</a>
+									<span><a href="#">button 2</a></span>
+								</div>
+							</div>
+							<div class="items_showTours">
+								<img src="https://a.travel-assets.com/dynamic_destination_images/179899.jpg" alt="">
+								<div class="show_tours_text">
+									<p>Tour 2</p>
+									<span>button 2</span>
+								</div>
+							</div>
+							<div class="items_showTours">
+								<img src="https://a.travel-assets.com/dynamic_destination_images/179899.jpg" alt="">
+								<div class="show_tours_text">
+									<p>Tour 2</p>
+									<span>button 2</span>
+								</div>
+							</div>
+							<div class="items_showTours">
+								<img src="https://a.travel-assets.com/dynamic_destination_images/179899.jpg" alt="">
+								<div class="show_tours_text">
+									<p>Tour 2</p>
+									<span>button 2</span>
+								</div>
+							</div>
+
 						</div>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-12">
-						<div class="col-md-6 col-sm-6 col-xs-12"></div>
-						<div class="col-md-6 col-sm-6 col-xs-12"></div>
-					</div>
-				</div> -->
-				<?php get_template_part('template-parts/show_tours'); ?>        
+
+				</div>
+				<?php get_template_part('template-parts/show_tours'); ?>
       </div>
     </section>
 
@@ -118,5 +265,5 @@
 					</div>
 				</div>
       </div>
-		</section>		
+		</section>
   <?php get_footer(); ?>

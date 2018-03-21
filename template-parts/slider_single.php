@@ -10,10 +10,10 @@
 		<?php cmb2_output_file_list('ema_campos_tours_galeria', 'tour_img_slide');?>
 		<!-- left and right Elements -->
 		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="dashicons-arrow-left-alt2"></span>
 		</a>
 		<a class="right carousel-control" href="#myCarousel" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="dashicons-arrow-right-alt2"></span>
 		</a>
 	</div> <!-- End Slider -->
 	<hr>

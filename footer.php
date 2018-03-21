@@ -75,6 +75,11 @@
     	<div class="messenger"><a href="https://m.me/machupicchunew"><img src="<?php bloginfo('template_directory'); ?>/img/messenger.svg" alt="Messenger"></a></div>
     	<div class="whatsapp"><a href="https://api.whatsapp.com/send?phone=51997329168"><img src="<?php bloginfo('template_directory'); ?>/img/whatsapp.svg" alt="Whatsapp"></a></div>
     </div>
+    <section id="chat" >
+      <div>
+        <script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '3966b671-0fb2-4542-8ec5-8b35a6329aca', f: true }); done = true; } }; })();</script>
+      </div>
+    </section>
   </footer>
   <?php wp_footer(); ?>
   </body>

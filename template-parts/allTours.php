@@ -3,7 +3,7 @@
     <!-- Division de tours -->
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <h3 class="title">Los viajes mas cotizados y mas buscados</h3>
+        <h3 class="title">Los viajes por el Mundo mas cotizados y mas buscados</h3>
       </div>
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="allTours">
@@ -12,7 +12,7 @@
     	$args = array(
     		'post_type' 			=> 'tours',
     		'orderby'        	=> 'rand',
-    		'posts_per_page'		=> '-1',
+    		'posts_per_page'		=> '6',
     	);
 
       $excerpt = '';

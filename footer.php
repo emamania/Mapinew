@@ -15,6 +15,7 @@
               <ul class="address">
                 <li class="foot_post_list"><a href="tel://<?php echo esc_attr( get_option('ema_telefono') ); ?>"><i class="fa fa-phone"></i><?php echo esc_attr( get_option('ema_telefono') ); ?></a></li>
                 <li class="foot_post_list"><a href="mailto:<?php echo esc_attr( get_option('ema_email') ); ?>"><i class="fa fa-envelope-o"></i><?php echo esc_attr( get_option('ema_email') ); ?></a></li>
+                <li class="foot_post_list"><a href="#"><i class="fa fa-home"></i><?php echo esc_attr( get_option('ema_direccion') ); ?></a></li>
                 <!-- <li><a href="#">?php echo esc_attr( get_option('ema_direccion') ); ?></a></li> -->
               </ul>
             </div>

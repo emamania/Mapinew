@@ -161,7 +161,7 @@ nav {
 .main_menu ul li a {
   display: block;
   line-height: 20px;
-  padding: 10px; }
+  padding: 10px 7px; }
   .main_menu ul li a i:before {
     color: #ffffff;
     padding-left: .5em; }
@@ -328,39 +328,33 @@ a.dropdown-toggle.icon-search {
 .title {
   text-align: center;
   font-weight: 300;
-  font-size: 32px;
   margin-bottom: 1.1em;
   font-family: "Montserrat",Arial,sans-serif; }
+  @media only screen and (min-width: 650px) {
+    .title {
+      font-size: 32px; } }
 
 #most_wanted {
   background: #ffffff;
-  padding: 2.5em 0 5em 0;
+  padding: 3em 0 3em 0;
   font-family: "Montserrat",Arial,sans-serif; }
-  #most_wanted .title {
-    text-align: center;
-    font-weight: 300;
-    font-size: 32px;
-    margin-bottom: 1.1em; }
   #most_wanted .list_wanted {
-    padding-bottom: 1em;
-    height: 240px; }
+    padding-bottom: 1em; }
+    #most_wanted .list_wanted h4 {
+      margin-bottom: 15px; }
+    #most_wanted .list_wanted ul li {
+      line-height: 1.2;
+      list-style: none;
+      margin-bottom: .7em;
+      margin-left: 1em; }
     #most_wanted .list_wanted a {
       margin-bottom: 0;
       font-size: 13px;
       font-weight: 300;
-      text-decoration: none;
       margin-left: -2.2em; }
       #most_wanted .list_wanted a .fa-check:before {
         color: #e04f67;
         padding: 0 0.5em; }
-    #most_wanted .list_wanted h4 {
-      font-size: 17px;
-      font-weight: 500;
-      margin-bottom: 15px; }
-    #most_wanted .list_wanted ul li {
-      font-family: "Montserrat",Arial,sans-serif;
-      list-style: none;
-      margin-left: 2.2em; }
 
 #travelSytle {
   background: #f9f9f9;
@@ -995,6 +989,7 @@ a.dropdown-toggle.icon-search {
     visibility: hidden;
     left: 3px;
     top: 100%;
+    text-align: left;
     margin: 0;
     display: block;
     padding: 0;
@@ -1399,14 +1394,14 @@ a.dropdown-toggle.icon-search {
     border-bottom: 1px solid #c7c7c7; }
   .allTours .textTopallTours {
     position: absolute;
-    top: 250px;
     color: #fff;
     width: 100%;
     font-size: 20px;
     display: flex;
     font-weight: 600;
     text-shadow: 1px 2px 5px #000;
-    padding: .5em; }
+    padding: 0 .3em 0 .7em;
+    bottom: 30%; }
     .allTours .textTopallTours span {
       display: flex; }
       .allTours .textTopallTours span:last-child {
@@ -1414,7 +1409,9 @@ a.dropdown-toggle.icon-search {
   .allTours .textallTours {
     padding: 1em .7em;
     display: grid;
-    grid-template-columns: 3fr 1fr; }
+    grid-template-columns: 3fr 1fr;
+    text-transform: lowercase;
+    height: 110px; }
     .allTours .textallTours span {
       text-align: center; }
       .allTours .textallTours span i {
@@ -1439,7 +1436,8 @@ a.dropdown-toggle.icon-search {
   display: none;
   position: fixed;
   bottom: 70px;
-  right: 28px; }
+  right: 28px;
+  z-index: 50; }
   .grid_contactanos div {
     border-radius: 50%;
     width: 50px;
@@ -1453,5 +1451,91 @@ a.dropdown-toggle.icon-search {
         background: #0084ff; }
       .grid_contactanos .whatsapp {
         background: #189d0e; } }
+
+.tourv1 {
+  border-radius: 4px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  margin: 1em 0; }
+  .tourv1:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.6) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#99000000',GradientType=0 );
+    -webkit-transition: .3s;
+    transition: .3s;
+    z-index: 10; }
+  .tourv1:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    opacity: 0; }
+  .tourv1:hover:after {
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1; }
+  .tourv1 img {
+    max-width: 100%;
+    width: calc(100% + 50px);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    overflow: hidden;
+    margin-right: -1px;
+    object-fit: cover;
+    height: 300px; }
+  .tourv1 .tourv1_content {
+    position: absolute;
+    bottom: -55px;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 10;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s; }
+    .tourv1 .tourv1_content .tourv1_duration {
+      margin: 0;
+      font-weight: 400; }
+    .tourv1 .tourv1_content .tourv1_title {
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 18px;
+      display: block;
+      line-height: 1.1;
+      font-weight: 400; }
+      .tourv1 .tourv1_content .tourv1_title a {
+        color: #ffffff; }
+    .tourv1 .tourv1_content .tourv1_btn {
+      display: inline-block;
+      background-color: #e04f67;
+      color: #fff;
+      padding: 4px 15px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      position: relative;
+      bottom: -15px;
+      opacity: 0;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s; }
+  .tourv1:hover .tourv1_btn {
+    bottom: 0;
+    opacity: 1; }
+  .tourv1:hover .tourv1_content {
+    bottom: 0; }
 
 /*# sourceMappingURL=ema.css.map */

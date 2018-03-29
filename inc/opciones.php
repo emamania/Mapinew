@@ -36,33 +36,77 @@ add_action( 'admin_menu','ema_ajustes' );
 function ema_registrar_opciones() {
   // Registrar opciones, una por campo
   $option_group = 'ema_opciones_grupo';
+  $option_group_rs = 'ema_opciones_redesociales';
   //$option_name = 'ema_direccion';
   register_setting( $option_group, 'ema_direccion' );
   register_setting( $option_group, 'ema_telefono' );
   register_setting( $option_group, 'ema_email' );
+  register_setting( $option_group, 'ema_otro' );
+
+  register_setting( $option_group_rs, 'ema_facebook' );
+  register_setting( $option_group_rs, 'ema_twitter' );
+  register_setting( $option_group_rs, 'ema_instagram' );
+
+
 }
 
 function mapinew_opciones() { ?>
   <div class="wrap">
     <h1>Ajustes Mapi New</h1>
 
+    <?php
+      if(isset($_GET['tab'])) :
+        $active_tab = $_GET['tab'];
+      endif;
+    ?>
+
+    <h2 class="nat-tab-wrapper">
+      <a href="?page=mapinew_ajustes&tab=tema" class="nav-tab <?php echo $active_tab == 'tema' ? 'nav-tab-active' : '' ?>">Ajustes</a>
+      <a href="?page=mapinew_ajustes&tab=redesociales" class="nav-tab <?php echo $active_tab == 'redesociales' ? 'nav-tab-active' : '' ?>">Redes Sociales</a>
+    </h2>
+
     <form class="" action="options.php" method="post">
-      <?php settings_fields('ema_opciones_grupo'); ?>
-      <?php do_settings_sections('ema_opciones_grupo'); ?>
-      <table class="form-table">
-        <tr valign="top">
-          <th scope="row">Telefono de Empresa</th>
-          <td><input type="text" name="ema_telefono" value="<?php echo esc_attr(get_option('ema_telefono')); ?>"></td>
-        </tr>
-        <tr valign="top">
-          <th scope="row">Direccion del local</th>
-          <td><input class="regular-text ltr" type="text" name="ema_direccion" value="<?php echo esc_attr(get_option('ema_direccion')); ?>"></td>
-        </tr>
-        <tr valign="top">
-          <th scope="row">Correo de reservas</th>
-          <td><input class="regular-text ltr" type="text" name="ema_email" value="<?php echo esc_attr(get_option('ema_email')); ?>"></td>
-        </tr>
-      </table>
+
+      <?php if($active_tab == 'tema'): ?>
+          <?php settings_fields('ema_opciones_grupo'); ?>
+          <?php do_settings_sections('ema_opciones_grupo'); ?>
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Telefono de Empresa</th>
+              <td><input type="text" name="ema_telefono" value="<?php echo esc_attr(get_option('ema_telefono')); ?>"></td>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Direccion del local</th>
+              <td><input class="regular-text ltr" type="text" name="ema_direccion" value="<?php echo esc_attr(get_option('ema_direccion')); ?>"></td>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Correo de reservas</th>
+              <td><input class="regular-text ltr" type="text" name="ema_email" value="<?php echo esc_attr(get_option('ema_email')); ?>"></td>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Otros datos</th>
+              <td><input class="regular-text ltr" type="text" name="ema_otro" value="<?php echo esc_attr(get_option('ema_otro')); ?>"></td>
+            </tr>
+          </table>
+        <?php else: ?>
+          <?php settings_fields('ema_opciones_redesociales'); ?>
+          <?php do_settings_sections('ema_opciones_redesociales'); ?>
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Cuenta de Facebbok</th>
+              <td><input class="regular-text ltr" type="text" name="ema_facebook" value="<?php echo esc_attr(get_option('ema_facebook')); ?>"></td>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Cuenta de Twitter</th>
+              <td><input class="regular-text ltr" type="text" name="ema_twitter" value="<?php echo esc_attr(get_option('ema_twitter')); ?>"></td>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Cuenta de Instagram</th>
+              <td><input class="regular-text ltr" type="text" name="ema_instagram" value="<?php echo esc_attr(get_option('ema_instagram')); ?>"></td>
+            </tr>
+          </table>
+
+        <?php endif; ?>
       <?php submit_button() ?>
     </form>
 

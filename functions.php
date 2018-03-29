@@ -136,6 +136,7 @@ function ema_setup() {
 	// Front Page
 	add_image_size( 'allTours_img', 605, 300, true );
 	add_image_size( 'show_tours_img', 565, 610, true );
+	add_image_size( 'tourv1_img', 570, 400, true );
 
 }
 add_action( 'after_setup_theme', 'ema_setup' );

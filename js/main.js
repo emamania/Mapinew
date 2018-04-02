@@ -205,5 +205,23 @@
     evt.currentTarget.className += " active";
 	}
 
+	/* ==============================================
+				TABS HOME TIPO ACTIVIDD
+	=============================================== */
+
+	$('#filtrarTours > div').not(':first').hide();
+  jQuery('#filtrarActividades .nav_filter li:first-child').addClass('active');
+
+  $('#filtrarActividades .nav_filter a').on('click', function() {
+      jQuery('#filtrarActividades .nav_filter li').removeClass('active');
+      jQuery(this).parent().addClass('active');
+
+      var enlace = $(this).attr('href');
+
+      $('#filtrarTours > div').hide();
+      $(enlace).fadeIn();
+      return false;
+  });
+
 
 })( jQuery );

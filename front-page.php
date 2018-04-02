@@ -8,7 +8,9 @@
 		<!-- List the Most Wanted -->
 		<?php get_sidebar('list_tour'); ?>
 		<!-- Lista de Tours -->
-		<?php get_template_part('template-parts/allTours'); ?>
+		<section class="Activityfilter">
+			<?php get_template_part('template-parts/allTours'); ?>
+		</section>
 
 		<!-- Que quieres Hacer -->
     <section id="travelSytle">
@@ -31,27 +33,7 @@
 						</div>
 
 					</div>
-					<?php $args = array(
-						'posts_per_page'		=> '6',
-						'orderby'        	=> 'rand',
-						'post_type' 			=> 'tours'
-					);
-					$toursv1 = new WP_Query( $args );
-					?>
-						<?php while( $toursv1->have_posts() ):  $toursv1->the_post();?>
-					<div class="col-sm col-md-4">
-						<article class="tourv1">
-							<img src="<?php the_post_thumbnail_url($post->ID, 'tourv1_img') ?>" alt="">
-							<div class="tourv1_content">
-								<p class="tourv1_duration">3Days, 4 NIghts Start From <span>$450</span></p>
-								<h3 class="tourv1_title">
-									<a href="#"><?php the_title(); ?> </a>
-								</h3>
-								<a class="tourv1_btn" href="#">Book Now</a>
-							</div>
-						</article>
-					</div>
-					<?php endwhile; wp_reset_postdata(); ?>
+					
 					<!-- list of Style -->
 					<div class="col-md-12">
 						<div class="styleItems">

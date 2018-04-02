@@ -1924,7 +1924,7 @@ a.dropdown-toggle.icon-search {
     	font-weight: 400;
 		}
 		& .tourv1_title {
-			font-size: 24px;
+			font-size: 21px;
 	    margin-top: 0;
 	    margin-bottom: 18px;
 	    display: block;
@@ -1957,4 +1957,40 @@ a.dropdown-toggle.icon-search {
 	&:hover .tourv1_content {
     bottom: 0;
 	}
+}
+
+ /* FILTER SEGUN TIPO DE ACTIVIDAD  */
+ .Activityfilter {
+	 margin: 2em 0 4em 0;
+ }
+ .nav_filter {
+	 border-bottom: 1px solid #ddd;
+	 text-align: center;
+	 & li {
+		 margin-bottom: -1px;
+		 display: inline-block;
+		 &.active>a {
+			 color: #555;
+	     cursor: default;
+	     background-color: #fff;
+	     border: 1px solid #ddd;
+	     border-bottom-color: transparent;
+		 }
+		 & a {
+			margin-right: 2px;
+	    line-height: 1.42857143;
+	    border: 1px solid transparent;
+	    border-radius: 4px 4px 0 0;
+		 }
+	 }
+ }
+ .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+#filtrarTours {
+	margin-top: 1.5em;
 }

@@ -1,4 +1,47 @@
 <?php
+
+function filtrar_Tours_home($buscar){
+	$args = array(
+		'post_type' 			=> 'tours',
+		'posts_per_page'	=> 6,
+		'orderby'        	=> 'title',
+		'order'           => 'ASC',
+		'tax_query'       => array(
+			array(
+				'taxonomy'    => 'tipo-actividad',
+				'field'       => 'slug',
+				'terms'       => $buscar,
+			)
+		),
+	);
+		$filtrarHome = new WP_Query( $args );
+			echo '<div id="'.$buscar.'">';
+			while ( $filtrarHome->have_posts()): $filtrarHome->the_post();
+
+			echo '<div class="col-md-4 col-xs-12 col-sm-4">';
+			echo '<div class="tourv1">';
+			echo '<a href="'.get_the_permalink($post->ID).'">';
+			echo get_the_post_thumbnail( $post->ID, 'allTours_img');
+			echo '</a>';
+			echo '<div class="tourv1_content"';
+			echo '<p class="tourv1_duration">'.  get_post_meta( get_the_ID(), 'ema_campos_tours_duracion', true ) . '</p>';
+			echo '<h3 class="tourv1_title"><a href="'.get_the_permalink($post->ID).'">'.  get_the_title() . '</a></h3>';
+			echo '<a class="tourv1_btn" href="'.get_the_permalink($post->ID).'">Ver Tour';
+			echo '</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+
+
+
+			endwhile; wp_reset_postdata();
+			echo '</div>';
+
+
+}
+
+
+
 // Añadir ReCaptcha
 function ema_agregar_recaptcha() { ?>
 	<script src='https://www.google.com/recaptcha/api.js'></script>

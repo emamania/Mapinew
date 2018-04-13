@@ -23,8 +23,11 @@ function filtrar_Tours_home($buscar){
 			echo '<a href="'.get_the_permalink($post->ID).'">';
 			echo get_the_post_thumbnail( $post->ID, 'allTours_img');
 			echo '</a>';
-			echo '<div class="tourv1_content"';
-			echo '<p class="tourv1_duration">'.  get_post_meta( get_the_ID(), 'ema_campos_tours_duracion', true ) . '</p>';
+			echo '<div class="tourv1_content">';
+			echo '<p class="tourv1_duration">';
+			echo '<span>'. get_post_meta( get_the_ID(), 'ema_campos_tours_duracion', true ).'</span> desde ';
+			echo '<span>$ '. get_post_meta( get_the_ID(), 'ema_campos_tours_price', true ).'</span>';
+			echo '</p>';
 			echo '<h3 class="tourv1_title"><a href="'.get_the_permalink($post->ID).'">'.  get_the_title() . '</a></h3>';
 			echo '<a class="tourv1_btn" href="'.get_the_permalink($post->ID).'">Ver Tour';
 			echo '</a>';
@@ -32,13 +35,9 @@ function filtrar_Tours_home($buscar){
 			echo '</div>';
 			echo '</div>';
 
-
-
 			endwhile; wp_reset_postdata();
-			echo '</div>';
-
-
-}
+			echo '</div>';	
+};
 
 
 

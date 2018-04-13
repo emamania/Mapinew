@@ -54,7 +54,7 @@
         </div>
 
         <div class="col-md-12">
-          <div id="social_footer">
+          <div id="social_footer">            
   					<?php
   						$args = array(
   							'theme_location'				=> 'social-menu',

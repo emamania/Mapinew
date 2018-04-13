@@ -1223,15 +1223,15 @@ a.dropdown-toggle.icon-search {
 			margin: 0;
 			& li {
 				display: inline-block;
-				    margin: 0 5px 10px;
+		    margin: 0 5px 10px;
 				& a {
 					display: block;
-					font-size: 16px;
+					font-size: 25px;
 					border: 1px solid rgba(255, 255, 255, 0.3);
 					border-radius: 50%;
-					height: 35px;
-					width: 35px;
-					line-height: 35px;
+					height: 50px;
+					width: 50px;
+					line-height: 50px;
 					color: $white;
 					& .rs_text {
 						display: none;
@@ -1242,7 +1242,7 @@ a.dropdown-toggle.icon-search {
 					}
 				}
 				& a:hover {
-					color: $black;
+					color: $black!important;
 					background: $white;
 					border: 1px border solid $white;
 					&:link:before, &:link:before,
@@ -1251,7 +1251,7 @@ a.dropdown-toggle.icon-search {
 					}
 				}
 				& a[href*=".com"]::before {
-					font: normal normal normal 14px/1 FontAwesome;
+					font: normal normal normal 25px/1 FontAwesome;
 					color: $white!important;
 				}
 				& a[href*="facebook.com"]::before {
@@ -1910,7 +1910,7 @@ a.dropdown-toggle.icon-search {
     bottom: -55px;
     left: 0;
     width: 100%;
-    padding: 30px;
+    padding: 0 15px 30px;
     color: #fff;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1993,4 +1993,13 @@ a.dropdown-toggle.icon-search {
 }
 #filtrarTours {
 	margin-top: 1.5em;
+}
+
+
+/* SKYPE BUUTON CALL */
+#SkypeButton_Call_machupicchunew_1 {
+	& img {
+		margin: 0!important;
+    vertical-align: middle!important;
+	}
 }

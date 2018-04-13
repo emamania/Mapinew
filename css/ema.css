@@ -930,25 +930,25 @@ a.dropdown-toggle.icon-search {
         margin: 0 5px 10px; }
         #footer #social_footer ul li a {
           display: block;
-          font-size: 16px;
+          font-size: 25px;
           border: 1px solid rgba(255, 255, 255, 0.3);
           border-radius: 50%;
-          height: 35px;
-          width: 35px;
-          line-height: 35px;
+          height: 50px;
+          width: 50px;
+          line-height: 50px;
           color: #ffffff; }
           #footer #social_footer ul li a .rs_text {
             display: none; }
           #footer #social_footer ul li a:link:before, #footer #social_footer ul li a:link:before, #footer #social_footer ul li a:link:before, #footer #social_footer ul li a:link:before, #footer #social_footer ul li a:link:before {
             color: #ffffff !important; }
         #footer #social_footer ul li a:hover {
-          color: #000000;
+          color: #000000 !important;
           background: #ffffff;
           border: 1px border solid #ffffff; }
           #footer #social_footer ul li a:hover:link:before, #footer #social_footer ul li a:hover:link:before, #footer #social_footer ul li a:hover:link:before, #footer #social_footer ul li a:hover:link:before, #footer #social_footer ul li a:hover:link:before {
             color: #000000 !important; }
         #footer #social_footer ul li a[href*=".com"]::before {
-          font: normal normal normal 14px/1 FontAwesome;
+          font: normal normal normal 25px/1 FontAwesome;
           color: #ffffff !important; }
         #footer #social_footer ul li a[href*="facebook.com"]::before {
           content: "\f09a"; }
@@ -1498,7 +1498,7 @@ a.dropdown-toggle.icon-search {
     bottom: -55px;
     left: 0;
     width: 100%;
-    padding: 30px;
+    padding: 0 15px 30px;
     color: #fff;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1569,5 +1569,10 @@ a.dropdown-toggle.icon-search {
 
 #filtrarTours {
   margin-top: 1.5em; }
+
+/* SKYPE BUUTON CALL */
+#SkypeButton_Call_machupicchunew_1 img {
+  margin: 0 !important;
+  vertical-align: middle !important; }
 
 /*# sourceMappingURL=ema.css.map */

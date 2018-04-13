@@ -21,14 +21,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-12 col-sm-12">
 			<div class="form-group">
 				<label for="phone_booking"><i class="fa fa-phone"></i>Nro Telefonico</label>
 				<input class="form-control" type="text" id="phone_booking" name="phone_booking">
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="row">
 		<div class="col-md-6 col-sm-6">
 			<div class="form-group">
@@ -36,14 +36,22 @@
 					<input class="date-pick form-control" data-date-format="M d, D" type="date" id="fecha_in_booking" name="fecha_in_booking">
 			</div>
 		</div>
-		<div class="col-md-6 col-sm-6">
+		<!-- <div class="col-md-6 col-sm-6">
 			<div class="form-group">
 					<label for="fecha_out_booking"><i class="fa fa-calendar"></i>Fecha de salida</label>
 					<input class="date-pick form-control" data-date-format="M d, D" type="date" id="fecha_out_booking" name="fecha_out_booking">
 			</div>
+		</div> -->
+		<div class="col-md-6 col-sm-6">
+				<div class="form-group">
+						<label for="adulto_booking"><i class="fa fa-male"></i>Nro Personas</label>
+						<div class="numbers-row">
+							<input type="text" value="1" id="adulto_booking" class="qty2 form-control" name="adulto_booking">
+						</div>
+				</div>
 		</div>
 	</div>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-6 col-sm-6">
 				<div class="form-group">
 						<label for="adulto_booking"><i class="fa fa-male"></i>Adultos</label>
@@ -60,10 +68,11 @@
 						</div>
 				</div>
 		</div>
-	</div>
+	</div> -->
 
+	<!--
 	<br>
-	<table class="table table_summary">
+	 <table class="table table_summary">
 		<tbody>
 			<tr>
 				<td>Adultos</td>
@@ -92,7 +101,7 @@
 					</td>
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
 	<div class="row">
 		<div class="col-md-12">
 			<label for="mensaje_booking">Dejenos un Mensaje</label>
